@@ -16,21 +16,12 @@
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { CartComponent } from './cart/cart.component';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { ConfirmationComponent } from './confirmation/confirmation.component';
-import { HomeComponent } from './home/home.component';
-import { ItemDetailsComponent } from './item-details/item-details.component';
-import { ItemListComponent } from './item-list/item-list.component';
+import { PaymentConfirmationComponent } from './modules/payment/components/payment-confirmation/payment-confirmation.component';
+import { PaymentContainerComponent } from './modules/payment/components/payment-container/payment-container.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'list/:listId', component: ItemListComponent },
-  { path: 'list/:listId/:itemId', component: ItemDetailsComponent },
-  { path: 'cart', component: CartComponent },
-  { path: 'checkout', component: CheckoutComponent },
-  { path: 'confirm', component: ConfirmationComponent }
+  { path: '', component: PaymentContainerComponent },
+  { path: 'confirm', component: PaymentConfirmationComponent }
 ];
 
 @NgModule({

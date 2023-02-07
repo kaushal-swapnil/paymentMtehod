@@ -14,20 +14,17 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<style>
-  :host {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-</style>
-
-<app-header></app-header>
-
-<div class="content" role="main"></div>
-
-<router-outlet></router-outlet>
+<div class="item-details">
+    <div class="details">
+      <div class="buttons">
+        <google-pay-button
+          environment="TEST"
+          buttonType="buy"
+          buttonSizeMode="fill"
+          [paymentRequest]="paymentRequest"
+          (loadpaymentdata)="onLoadPaymentData($event)"
+        ></google-pay-button>
+      </div>
+    </div>
+  </div>
+  

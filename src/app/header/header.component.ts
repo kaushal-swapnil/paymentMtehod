@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { CartItemDetails, CategoryDetails, StoreService } from '../store.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -24,26 +23,13 @@ import { CartItemDetails, CategoryDetails, StoreService } from '../store.service
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Input() categories!: CategoryDetails[];
-  cart: CartItemDetails[] = [];
 
-  get cartSize() {
-    return this.cart.reduce((total, item) => total + item.quantity, 0);
-  }
-
-  constructor(private router: Router, private storeService: StoreService) {}
-
-  onMenuClick(event: Event, category: CategoryDetails) {
-    this.router.navigate(['/list', category.name]);
-  }
+  constructor(private router: Router) {}
 
   onCartClick() {
     this.router.navigate(['/cart']);
   }
 
   ngOnInit(): void {
-    this.storeService.getCart().subscribe(cart => {
-      this.cart = cart;
-    });
   }
 }

@@ -15,7 +15,6 @@
  */
 
 import { Component } from '@angular/core';
-import { CategoryDetails, StoreService } from './store.service';
 
 @Component({
   selector: 'app-root',
@@ -23,13 +22,9 @@ import { CategoryDetails, StoreService } from './store.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-store';
 
-  categories: CategoryDetails[] = [];
+  constructor() {}
 
-  constructor(private storeService: StoreService) {}
-
-  async ngOnInit(): Promise<void> {
-    this.storeService.getCategories().subscribe(categories => (this.categories = categories));
+  ngOnInit() {
   }
 }

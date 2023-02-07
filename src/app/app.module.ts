@@ -20,63 +20,30 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { MatBadgeModule } from '@angular/material/badge';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatCommonModule } from '@angular/material/core';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatSelectModule } from '@angular/material/select';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatToolbarModule } from '@angular/material/toolbar';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { CartComponent } from './cart/cart.component';
-import { CategoryComponent } from './category/category.component';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './home/home.component';
-import { ItemDetailsComponent } from './item-details/item-details.component';
-import { ItemListComponent } from './item-list/item-list.component';
 
-import { GooglePayButtonModule } from '@google-pay/button-angular';
+import { MaterialModule } from './modules/shared/material/material.module';
+import { PaymentModule } from './modules/payment/payment.module';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [
     AppComponent,
-    CartComponent,
-    CategoryComponent,
-    CheckoutComponent,
-    ConfirmationComponent,
     HeaderComponent,
-    HomeComponent,
-    ItemDetailsComponent,
-    ItemListComponent
+    ConfirmationComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
-    GooglePayButtonModule,
     HttpClientModule,
-    MatBadgeModule,
-    MatButtonModule,
-    MatCardModule,
-    MatCommonModule,
-    MatCheckboxModule,
-    MatIconModule,
-    MatInputModule,
-    MatMenuModule,
-    MatSelectModule,
-    MatSnackBarModule,
-    MatToolbarModule
+    MaterialModule,
+    PaymentModule
   ],
   providers: []
 })
